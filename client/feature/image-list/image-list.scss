@@ -1,0 +1,31 @@
+@import "variables";
+@import "mixins";
+
+#image-list {
+  position: absolute;
+  top:3rem;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  width: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 1px;
+
+  > button {
+    width: 100%;
+    background-color: $gray-light;
+    color: #000;
+    border-radius: 0;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: #000;
+    text-align:left;
+    padding-left: 1rem;
+
+    &.active {
+      background-color: $brand-primary;
+      color: #fff;
+    }
+  }
+}

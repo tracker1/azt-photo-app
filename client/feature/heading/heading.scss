@@ -1,0 +1,17 @@
+@import "variables";
+@import "mixins";
+
+#heading {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  height: 3rem;
+  vertical-align: middle;
+  padding-left: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-color: $gray-dark;
+  color: $gray-lighter;
+}
