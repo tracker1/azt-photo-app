@@ -1,13 +1,11 @@
 {
   "sourceMaps": true,
   "presets": [
-    "es2015-node6",
+    "modern-node/6.0",
     "stage-0",
     "react"
   ],
   "plugins": [
-    "transform-runtime",
-    "transform-decorators-legacy",
-    "transform-async-to-generator"
+    "transform-decorators-legacy"
   ]
 }

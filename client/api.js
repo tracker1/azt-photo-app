@@ -16,7 +16,7 @@ function parseResponse(response, prop = null, defaultValue = null) {
 }
 
 export async function fetchImageList() {
-  return parseResponse(await client.get('/image'), 'list', []);
+  return parseResponse(await client.get('/image'), 'list', null);
 }
 
 export async function fetchImage(id) {

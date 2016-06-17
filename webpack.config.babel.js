@@ -51,14 +51,13 @@ module.exports = {
         exclude: path.resolve(__dirname, 'node_modules'),
         loader: 'babel',
         query: {
-          presets: ['es2015', 'stage-0', 'react'].concat(
+          presets: ['modern', 'modern/safari9', 'modern/stage1', 'react'].concat(
             ENV === 'production'
             ? []
             : ['react-hmre']
           ),
           plugins: [
             'transform-decorators-legacy',
-            'transform-runtime',
           ]
         }
       },

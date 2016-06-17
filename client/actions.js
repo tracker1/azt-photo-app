@@ -26,8 +26,7 @@ export const imageDirection = (direction) => (dispatch, getState, { api }) => {
 export const setLat = throttle((lat) => (dispatch, getState, { api }) => {
   var image = { ...(getState().image || {}) };
   if (!image.name) return; //nothing to do
-  image.location = image.location || {};
-  image.location.latitude = lat;
+  image.latitude = lat;
   api.saveImage(image)
   dispatch(imageSelected(image));
 }, 1000);
@@ -35,8 +34,7 @@ export const setLat = throttle((lat) => (dispatch, getState, { api }) => {
 export const setLon = (lon) => (dispatch, getState, { api }) => {
   var image = { ...(getState().image || {}) };
   if (!image.name) return; //nothing to do
-  image.location = image.location || {};
-  image.location.longitude = lon;
+  image.longitude = lon;
   api.saveImage(image)
   dispatch(imageSelected(image));
 };
@@ -45,6 +43,7 @@ export const toggleIsSign = () => (dispatch, getState) => {
   var image = { ...(getState().image || {}) };
   if (!image.name) return;
   image.isSign = !image.isSign;
+  if (!image.isSign) image = { ...image, signSubject:undefined, signMaterial:undefined };
   api.saveImage(image)
   dispatch(imageSelected(image));
 }
@@ -53,6 +52,7 @@ export const toggleIsGate = () => (dispatch, getState) => {
   var image = { ...(getState().image || {}) };
   if (!image.name) return;
   image.isGate = !image.isGate;
+  if (!image.isGate) image = { ...image, gateType:undefined };
   api.saveImage(image)
   dispatch(imageSelected(image));
 }
@@ -61,6 +61,7 @@ export const toggleIsRoad = () => (dispatch, getState) => {
   var image = { ...(getState().image || {}) };
   if (!image.name) return;
   image.isRoad = !image.isRoad;
+  if (!image.isRoad) image = { ...image, roadType:undefined, roadLevel:undefined, roadMotorized:undefined, roadSafetyConsiderations:undefined };
   api.saveImage(image)
   dispatch(imageSelected(image));
 }

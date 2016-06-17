@@ -1,4 +1,4 @@
-global.Promise = require('bluebird');
+//global.Promise = require('bluebird');
 
 import '../lib/promisify';
 import path from 'path';
@@ -13,7 +13,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 export async function main() {
   console.log('Loading image data...');
-  await db.data();
+  await db.list();
   console.log('Image Data Loaded');
 
   let message = `Listening on port ${PORT}! - http://localhost:${PORT}`;

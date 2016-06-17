@@ -5,14 +5,16 @@ export default function SignInventory(props) {
     <br />
     <div className="row">
       <div className="col-xs-12">
-        <input
-          type="checkbox"
-          onClick={props.actions.toggleIsSign}
-          checked={!!props.image.isSign}
-        />
-        <span>
-          Sign
-        </span>
+        <label>
+          <input
+            type="checkbox"
+            onClick={props.actions.toggleIsSign}
+            checked={!!props.image.isSign}
+          />
+          <span>
+            Sign
+          </span>
+        </label>
       </div>
     </div>
     {

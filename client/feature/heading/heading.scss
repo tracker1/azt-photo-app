@@ -14,4 +14,15 @@
   font-weight: bold;
   background-color: $gray-dark;
   color: $gray-lighter;
+
+  .buttons {
+    position: absolute;
+    top: 2px;
+    left: auto;
+    right: 0;
+
+    a {
+      margin-right: 5px;
+    }
+  }
 }

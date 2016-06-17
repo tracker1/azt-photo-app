@@ -7,7 +7,7 @@
   left: 0;
   right: auto;
   bottom: 0;
-  width: 200px;
+  width: 300px;
   overflow-x: hidden;
   overflow-y: auto;
   padding-bottom: 1px;
@@ -26,6 +26,15 @@
     &.active {
       background-color: $brand-primary;
       color: #fff;
+    }
+
+    .flags {
+      display: block;
+      float:right;
+
+      > span {
+        margin-left: 5px;
+      }
     }
   }
 }

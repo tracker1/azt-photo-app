@@ -35,11 +35,11 @@ export function ImageForm(props) {
         <div className="col-sm-6">
           <fieldset className="form-group">
             <label for="exampleInputEmail1">Latitude</label>
-            <input type="number" min="-180" max="180" className="form-control" onChange={evt => props.actions.setLat(evt.target.value)} value={img.location.latitude} />
+            <input type="number" min="-180" max="180" className="form-control" onChange={evt => props.actions.setLat(evt.target.value)} value={img.latitude} />
           </fieldset>
           <fieldset className="form-group">
             <label for="exampleInputEmail1">Longitude</label>
-            <input type="number" min="-180" max="180" className="form-control" onChange={evt => props.actions.setLon(evt.target.value)} value={img.location.longitude} />
+            <input type="number" min="-180" max="180" className="form-control" onChange={evt => props.actions.setLon(evt.target.value)} value={img.longitude} />
           </fieldset>
         </div>
       </div>

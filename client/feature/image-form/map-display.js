@@ -44,7 +44,7 @@ export class MapDisplay extends Component {
 
         googleMapElement={
           <GoogleMap
-            ref={(map) => console.log(map)}
+            ref={(map) => false && console.log(map)}
             defaultZoom={7}
             defaultCenter={{
               lat: 34.0489,
@@ -52,13 +52,13 @@ export class MapDisplay extends Component {
             }}
             zoom={props.zoom}
             center={{
-              lat: props.location.latitude,
-              lng: props.location.longitude
+              lat: props.latitude,
+              lng: props.longitude
             }}
             onClick={this.onMapClick}
           >
             <Marker
-              position={{ lat: props.location.latitude, lng: props.location.longitude }}
+              position={{ lat: props.latitude, lng: props.longitude }}
             />
           </GoogleMap>
         }
@@ -69,23 +69,20 @@ export class MapDisplay extends Component {
 
 export default connect(
   state => {
+    //console.log(state.image);
     let { image } = state;
-    if (!(image && image.location && image.location.latitude && image.location.longitude)) {
+    if (!(image && image.latitude && image.longitude)) {
       return {
         zoom: 6,
-        location: {
-          latitude: 34.0489,
-          longitude: -111.0937
-        }
+        latitude: 34.0489,
+        longitude: -111.0937
       };
     }
 
     return {
       zoom: 15,
-      location: {
-        longitude: +image.location.longitude,
-        latitude: +image.location.latitude,
-      }
+      longitude: +image.longitude,
+      latitude: +image.latitude,
     };
   },
   dispatch => ({ actions:bindActionCreators(actionCreators, dispatch) })
