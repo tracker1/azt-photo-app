@@ -109,11 +109,13 @@ module.exports = {
     ? [
       stylesCss,
       new webpack.optimize.OccurenceOrderPlugin(),
+      /*
       new webpack.optimize.UglifyJsPlugin({
         mangle: true,
         compress: true,
         comments: false,
       }),
+      */
     ]
     : [
       new webpack.HotModuleReplacementPlugin()
